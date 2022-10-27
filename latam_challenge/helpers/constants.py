@@ -1,0 +1,72 @@
+# COLUMNS
+FECHAI = 'Fecha-I'
+FECHAO = 'Fecha-O'
+VLOO = 'Vlo-O'
+ORIO = 'Ori-O'
+DESO = 'Des-O'
+EMPO = 'Emp-O'
+VLOI = 'Vlo-I'
+DIA = 'DIA'
+MES = 'MES'
+ANIO = 'AÑO'
+DIANOM = 'DIANOM'
+TIPOVUELO = 'TIPOVUELO'
+OPERA = 'OPERA'
+SIGLADES = 'SIGLADES'
+
+
+#  SYNTETHIC DATA
+TEMPORADA_ALTA = 'temporada_alta'
+DIF_MIN = 'dif_min'
+ATRASO_15 = 'atraso_15'
+PERIODO_DIA = 'periodo_dia'
+MORNING = 'mañana'
+AFTERNOON = 'tarde'
+NIGHT = 'noche'
+ANTERIOR_DELAY = 'anterior_delay'
+ANTERIOR_EARLY = 'anterior_early'
+NUMBER_OF_FLIGHTS_SAME_OPERA = 'number_of_flights_same_opera'
+NUMBER_OF_FLIGHTS_BEFORE = 'number_of_flights_before'
+NUMBER_OF_FLIGHTS_SAME_DEST = 'number_of_flights_same_dest'
+
+# TEMPORAL
+COL_TEMPORAL = 'col_tmp'
+DATE = 'Date'
+TIME = 'time'
+HOUR = 'hour'
+MINUTE = 'minute'
+
+
+COLUMN_FILTER = [FECHAI,VLOI, DIANOM, 
+                TIPOVUELO, OPERA, SIGLADES, TEMPORADA_ALTA, ATRASO_15, PERIODO_DIA,
+                 ANTERIOR_DELAY, ANTERIOR_EARLY, NUMBER_OF_FLIGHTS_SAME_OPERA,
+                NUMBER_OF_FLIGHTS_BEFORE, NUMBER_OF_FLIGHTS_SAME_DEST]
+
+COLUMN_SYNTHETIC_FEATURES = [TEMPORADA_ALTA, DIF_MIN, ATRASO_15, PERIODO_DIA]
+
+COLUMNS_OUTPUT = [TEMPORADA_ALTA, DIF_MIN, ATRASO_15, PERIODO_DIA]
+
+
+
+STR_WINTER_START = '2017-12-15'
+STR_WINTER_END = '2017-12-31'
+STR_WINTER_BIS_START = '2017-01-01'
+STR_WINTER_BIS_END = '2017-03-03'
+STR_JULY_START = '2017-07-15'
+STR_JULY_END = '2017-07-31'
+STR_SEPT_START = '2017-09-11'
+STR_SEPT_END = '2017-09-30'
+
+
+STR_MANANA_START= '5:00'
+STR_MANANA_END = '11:59'
+STR_TARDE_START = '12:00'
+STR_TARDE_END = '18:59'
+
+PARAM_GRID = {
+    'n_estimators': [10, 20, 50, 10, 200, 500],
+    'max_features': ['auto', 'sqrt', 'log2'],
+    'max_depth': [4, 8, 16, 32, 64, 128, 256, 512],
+    'criterion': ['gini', 'entropy'],
+    'n_jobs': [2]
+}
