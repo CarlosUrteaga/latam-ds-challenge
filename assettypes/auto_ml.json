@@ -1,0 +1,14 @@
+{
+  "name": "auto_ml",
+  "version": 1,
+  "fields": [
+    {
+      "key": "name",
+      "type": "string"
+    },
+    {
+      "key": "entity",
+      "type": "object"
+    }
+  ]
+}

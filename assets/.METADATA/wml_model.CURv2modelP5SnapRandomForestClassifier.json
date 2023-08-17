@@ -1,0 +1,646 @@
+{
+  "entity": {
+    "wml_model": {
+      "data_asset_dependencies": [
+        "data_asset.germancreditdatacsv-917u"
+      ],
+      "hybrid_pipeline_software_specs": [
+        {
+          "base_id": "b4246d87-d8b3-5621-9fea-76a8ea452616",
+          "name": "autoai-kb_rt23.1-py3.10"
+        }
+      ],
+      "data_preprocessing": [
+        {
+          "input": {
+            "columns": 22,
+            "rows": 5000
+          },
+          "output": {
+            "columns": 22,
+            "rows": 5000
+          },
+          "props": {
+            "type": "stratified"
+          },
+          "stage": "sampling"
+        },
+        {
+          "input": {
+            "columns": 22,
+            "rows": 5000
+          },
+          "output": {
+            "columns": 22,
+            "rows": 5000
+          },
+          "props": {
+            "duplicated_rows_count": 0,
+            "outliers_count": null
+          },
+          "stage": "cleansing"
+        }
+      ],
+      "label_column": "Risk",
+      "pipeline": {
+        "id": "wml_pipeline.CURv2model"
+      },
+      "training_id": "820ee77f-88f5-42d5-9883-ff74d415baf0",
+      "metrics": [
+        {
+          "context": {
+            "binary_classification": {
+              "confusion_matrix": [
+                {
+                  "fn": 83,
+                  "fp": 20,
+                  "tn": 313,
+                  "tp": 84,
+                  "true_class": "Risk"
+                },
+                {
+                  "fn": 20,
+                  "fp": 83,
+                  "tn": 84,
+                  "tp": 313,
+                  "true_class": "No Risk"
+                }
+              ],
+              "roc_curve": [
+                {
+                  "fpr": [
+                    0,
+                    0.006006006006006006,
+                    0.015015015015015015,
+                    0.024024024024024024,
+                    0.03303303303303303,
+                    0.04804804804804805,
+                    0.06006006006006006,
+                    0.07807807807807808,
+                    0.11411411411411411,
+                    0.14114114114114115,
+                    0.15915915915915915,
+                    0.1831831831831832,
+                    0.2012012012012012,
+                    0.21921921921921922,
+                    0.24024024024024024,
+                    0.25825825825825827,
+                    0.2852852852852853,
+                    0.30930930930930933,
+                    0.32732732732732733,
+                    0.34534534534534533,
+                    0.3933933933933934,
+                    0.48348348348348347,
+                    0.5675675675675675,
+                    0.6246246246246246,
+                    0.6876876876876877,
+                    0.8078078078078078,
+                    0.9159159159159159,
+                    1
+                  ],
+                  "thresholds": [
+                    1.944070816040039,
+                    0.8860704898834229,
+                    0.8205365538597107,
+                    0.7449557781219482,
+                    0.6153137683868408,
+                    0.576270341873169,
+                    0.4931722581386566,
+                    0.46613168716430664,
+                    0.40276414155960083,
+                    0.3710818588733673,
+                    0.362717866897583,
+                    0.3558715879917145,
+                    0.34832537174224854,
+                    0.34152543544769287,
+                    0.33100923895835876,
+                    0.3256833255290985,
+                    0.3157433569431305,
+                    0.30274590849876404,
+                    0.2743151783943176,
+                    0.25688686966896057,
+                    0.2388133853673935,
+                    0.19103728234767914,
+                    0.13732056319713593,
+                    0.09711533039808273,
+                    0.07233896851539612,
+                    0.043892644345760345,
+                    0.027712464332580566,
+                    0.026143889874219894
+                  ],
+                  "tpr": [
+                    0,
+                    0.10179640718562874,
+                    0.20359281437125748,
+                    0.2934131736526946,
+                    0.437125748502994,
+                    0.46107784431137727,
+                    0.5149700598802395,
+                    0.5389221556886228,
+                    0.5808383233532934,
+                    0.6107784431137725,
+                    0.6347305389221557,
+                    0.6586826347305389,
+                    0.6826347305389222,
+                    0.7065868263473054,
+                    0.7305389221556886,
+                    0.7485029940119761,
+                    0.7724550898203593,
+                    0.7964071856287425,
+                    0.8323353293413174,
+                    0.8682634730538922,
+                    0.8922155688622755,
+                    0.9221556886227545,
+                    0.9401197604790419,
+                    0.9700598802395209,
+                    0.9880239520958084,
+                    1,
+                    1,
+                    1
+                  ],
+                  "true_class": "Risk"
+                },
+                {
+                  "fpr": [
+                    0,
+                    0,
+                    0,
+                    0.011976047904191617,
+                    0.029940119760479042,
+                    0.059880239520958084,
+                    0.07784431137724551,
+                    0.10778443113772455,
+                    0.1317365269461078,
+                    0.16766467065868262,
+                    0.20359281437125748,
+                    0.2275449101796407,
+                    0.25149700598802394,
+                    0.2694610778443114,
+                    0.2934131736526946,
+                    0.31736526946107785,
+                    0.3413173652694611,
+                    0.3652694610778443,
+                    0.38922155688622756,
+                    0.41916167664670656,
+                    0.46107784431137727,
+                    0.48502994011976047,
+                    0.5389221556886228,
+                    0.562874251497006,
+                    0.7065868263473054,
+                    0.7964071856287425,
+                    0.8982035928143712,
+                    1
+                  ],
+                  "thresholds": [
+                    1.9738560914993286,
+                    0.9724559187889099,
+                    0.9564108848571777,
+                    0.9299501180648804,
+                    0.9050431847572327,
+                    0.862949788570404,
+                    0.810176432132721,
+                    0.763594388961792,
+                    0.7438114881515503,
+                    0.727022111415863,
+                    0.7029475569725037,
+                    0.6858268976211548,
+                    0.6749383807182312,
+                    0.6697922348976135,
+                    0.6588347554206848,
+                    0.6531442403793335,
+                    0.6463177800178528,
+                    0.6379032731056213,
+                    0.6292370557785034,
+                    0.5995503664016724,
+                    0.5339663028717041,
+                    0.5136874318122864,
+                    0.42807918787002563,
+                    0.3920060694217682,
+                    0.26836901903152466,
+                    0.18003298342227936,
+                    0.11401334404945374,
+                    0.055929139256477356
+                  ],
+                  "tpr": [
+                    0,
+                    0.08408408408408409,
+                    0.1921921921921922,
+                    0.3123123123123123,
+                    0.37537537537537535,
+                    0.43243243243243246,
+                    0.5165165165165165,
+                    0.6066066066066066,
+                    0.6546546546546547,
+                    0.6726726726726727,
+                    0.6906906906906907,
+                    0.7147147147147147,
+                    0.7417417417417418,
+                    0.7597597597597597,
+                    0.7807807807807807,
+                    0.7987987987987988,
+                    0.8168168168168168,
+                    0.8408408408408409,
+                    0.8588588588588588,
+                    0.8858858858858859,
+                    0.9219219219219219,
+                    0.93993993993994,
+                    0.9519519519519519,
+                    0.9669669669669669,
+                    0.975975975975976,
+                    0.984984984984985,
+                    0.993993993993994,
+                    1
+                  ],
+                  "true_class": "No Risk"
+                }
+              ]
+            },
+            "classes": [
+              "Risk",
+              "No Risk"
+            ],
+            "features_importance": [
+              {
+                "computation_type": "",
+                "features": {
+                  "LoanAmount": 0.29,
+                  "NewFeature_16_pca_17": 0.15,
+                  "NewFeature_10_pca_8": 0.17,
+                  "NewFeature_2_product(LoanAmount__Age)": 0.56,
+                  "NewFeature_8_pca_5": 0.23,
+                  "Job": 0.04,
+                  "NewFeature_1_product(LoanDuration__Age)": 0.71,
+                  "NewFeature_5_pca_2": 0.18,
+                  "NewFeature_17_pca_18": 0.33,
+                  "NewFeature_3_pca_0": 1,
+                  "NewFeature_18_pca_19": 0.24,
+                  "NewFeature_15_pca_16": 0.26,
+                  "NewFeature_7_pca_4": 0.16,
+                  "InstallmentPercent": 0.25,
+                  "ExistingSavings": 0.04,
+                  "CheckingStatus": 0.22,
+                  "LoanPurpose": 0.07,
+                  "InstallmentPlans": 0.03,
+                  "OthersOnLoan": 0.06,
+                  "NewFeature_13_pca_13": 0.19,
+                  "NewFeature_6_pca_3": 0.18,
+                  "LoanDuration": 0.41,
+                  "NewFeature_19_pca_20": 0.23,
+                  "NewFeature_9_pca_7": 0.23,
+                  "Age": 0.31,
+                  "CreditHistory": 0.03,
+                  "NewFeature_11_pca_11": 0.17,
+                  "CurrentResidenceDuration": 0.12,
+                  "NewFeature_0_product(LoanDuration__LoanAmount)": 0.3,
+                  "NewFeature_14_pca_15": 0.24,
+                  "ForeignWorker": 0,
+                  "Housing": 0.06,
+                  "NewFeature_4_pca_1": 0.13,
+                  "ExistingCreditsCount": 0.24,
+                  "Telephone": 0.2,
+                  "Sex": 0.06,
+                  "Dependents": 0.01,
+                  "OwnsProperty": 0.1,
+                  "EmploymentDuration": 0.21,
+                  "NewFeature_12_pca_12": 0.23
+                },
+                "stage": "Mean"
+              }
+            ],
+            "intermediate_model": {
+              "composition_steps": [
+                "Split_TrainingHoldout",
+                "TrainingDataset_full_4500_20",
+                "Column Selection",
+                "Datetime_FE",
+                "TrainingDataset_full_4500_20",
+                "Preprocessor_default",
+                "DAUB",
+                "hpo_d",
+                "cognito",
+                "hpo_c",
+                "Ensemble"
+              ],
+              "duration": 66430,
+              "location": {
+                "model": "/projects/9fe678d1-28d0-4349-b5a4-0092898c7768/assets/auto_ml/auto_ml.CURv2model/wml_data/820ee77f-88f5-42d5-9883-ff74d415baf0/data/automl/batch_ensemble_output/Pipeline1/model.pickle",
+                "pipeline": "/projects/9fe678d1-28d0-4349-b5a4-0092898c7768/assets/auto_ml/auto_ml.CURv2model/wml_data/820ee77f-88f5-42d5-9883-ff74d415baf0/data/automl/batch_ensemble_output/Pipeline1/pipeline.json",
+                "pipeline_model": "/projects/9fe678d1-28d0-4349-b5a4-0092898c7768/assets/auto_ml/auto_ml.CURv2model/wml_data/820ee77f-88f5-42d5-9883-ff74d415baf0/data/automl/batch_ensemble_output/Pipeline1/pipeline-model.json"
+              },
+              "name": "P5",
+              "notebook_location": "/projects/9fe678d1-28d0-4349-b5a4-0092898c7768/assets/auto_ml/auto_ml.CURv2model/wml_data/820ee77f-88f5-42d5-9883-ff74d415baf0/data/automl/batch_ensemble_output/Pipeline1/incremental_learning_notebook.ipynb",
+              "pipeline_nodes": [
+                "ColumnSelector",
+                "PreprocessingTransformer",
+                "autoai_libs.cognito.transforms.transform_utils.product",
+                "autoai_libs.cognito.transforms.transform_utils.FS1",
+                "autoai_libs.cognito.transforms.transform_utils.pca",
+                "autoai_libs.cognito.transforms.transform_utils.FS1",
+                "BatchedTreeEnsembleClassifier(base_estimator=SnapRandomForestClassifier)"
+              ],
+              "process": "batch_ensemble_output",
+              "schema_location": "/projects/9fe678d1-28d0-4349-b5a4-0092898c7768/assets/auto_ml/auto_ml.CURv2model/wml_data/820ee77f-88f5-42d5-9883-ff74d415baf0/data/automl/batch_ensemble_output/Pipeline1/schema.json"
+            },
+            "phase": "batch_ensemble_output",
+            "prediction_type": "classification",
+            "target_column": "Risk"
+          },
+          "ml_metrics": {
+            "training_roc_auc": 0.842363654406236,
+            "holdout_average_precision": 0.4869826053320998,
+            "holdout_neg_log_loss": -0.45265190631108987,
+            "training_accuracy": 0.8017777777777777,
+            "holdout_roc_auc": 0.8420995846145548,
+            "training_balanced_accuracy": 0.7370903837969708,
+            "training_f1": 0.8622725188920187,
+            "holdout_precision": 0.7904040404040404,
+            "training_average_precision": 0.9089443821346935,
+            "training_neg_log_loss": -0.44479056956521107,
+            "holdout_recall": 0.93993993993994,
+            "training_precision": 0.8023568050879074,
+            "holdout_accuracy": 0.794,
+            "holdout_balanced_accuracy": 0.7214669759579939,
+            "training_recall": 0.9319319319319318,
+            "holdout_f1": 0.8587105624142661
+          },
+          "timestamp": "2023-08-15T18:02:36.000Z"
+        }
+      ],
+      "ml_version": "4.0.18",
+      "type": "wml-hybrid_0.1",
+      "schemas": {
+        "input": [
+          {
+            "fields": [
+              {
+                "name": "CustomerID",
+                "type": "other"
+              },
+              {
+                "name": "CheckingStatus",
+                "type": "other"
+              },
+              {
+                "name": "LoanDuration",
+                "type": "double"
+              },
+              {
+                "name": "CreditHistory",
+                "type": "other"
+              },
+              {
+                "name": "LoanPurpose",
+                "type": "other"
+              },
+              {
+                "name": "LoanAmount",
+                "type": "double"
+              },
+              {
+                "name": "ExistingSavings",
+                "type": "other"
+              },
+              {
+                "name": "EmploymentDuration",
+                "type": "other"
+              },
+              {
+                "name": "InstallmentPercent",
+                "type": "double"
+              },
+              {
+                "name": "Sex",
+                "type": "other"
+              },
+              {
+                "name": "OthersOnLoan",
+                "type": "other"
+              },
+              {
+                "name": "CurrentResidenceDuration",
+                "type": "double"
+              },
+              {
+                "name": "OwnsProperty",
+                "type": "other"
+              },
+              {
+                "name": "Age",
+                "type": "double"
+              },
+              {
+                "name": "InstallmentPlans",
+                "type": "other"
+              },
+              {
+                "name": "Housing",
+                "type": "other"
+              },
+              {
+                "name": "ExistingCreditsCount",
+                "type": "double"
+              },
+              {
+                "name": "Job",
+                "type": "other"
+              },
+              {
+                "name": "Dependents",
+                "type": "double"
+              },
+              {
+                "name": "Telephone",
+                "type": "other"
+              },
+              {
+                "name": "ForeignWorker",
+                "type": "other"
+              }
+            ],
+            "id": "auto_ai_kb_input_schema"
+          }
+        ],
+        "output": []
+      },
+      "content_location": {
+        "connection": {},
+        "contents": [
+          {
+            "content_format": "pipeline-node",
+            "file_name": "P5_automl.zip",
+            "location": "/projects/9fe678d1-28d0-4349-b5a4-0092898c7768/assets/auto_ml/auto_ml.CURv2model/wml_data/820ee77f-88f5-42d5-9883-ff74d415baf0/assets/820ee77f-88f5-42d5-9883-ff74d415baf0_P5_batch_ensemble_output/resources/wml_model/P5_automl.zip",
+            "pipeline_node_id": "automl"
+          },
+          {
+            "content_format": "native",
+            "file_name": "pipeline_model.json",
+            "location": "/projects/9fe678d1-28d0-4349-b5a4-0092898c7768/assets/auto_ml/auto_ml.CURv2model/wml_data/820ee77f-88f5-42d5-9883-ff74d415baf0/assets/820ee77f-88f5-42d5-9883-ff74d415baf0_P5_batch_ensemble_output/resources/wml_model/pipeline_model.json"
+          }
+        ],
+        "location": {
+          "path": "/projects/9fe678d1-28d0-4349-b5a4-0092898c7768/assets/auto_ml/auto_ml.CURv2model/wml_data",
+          "notebooks_path": "/projects/9fe678d1-28d0-4349-b5a4-0092898c7768/assets/auto_ml/auto_ml.CURv2model/wml_data/820ee77f-88f5-42d5-9883-ff74d415baf0/notebooks",
+          "training": "/projects/9fe678d1-28d0-4349-b5a4-0092898c7768/assets/auto_ml/auto_ml.CURv2model/wml_data/820ee77f-88f5-42d5-9883-ff74d415baf0",
+          "training_status": "/projects/9fe678d1-28d0-4349-b5a4-0092898c7768/assets/auto_ml/auto_ml.CURv2model/wml_data/820ee77f-88f5-42d5-9883-ff74d415baf0/training-status.json",
+          "assets_path": "/projects/9fe678d1-28d0-4349-b5a4-0092898c7768/assets/auto_ml/auto_ml.CURv2model/wml_data/820ee77f-88f5-42d5-9883-ff74d415baf0/assets"
+        },
+        "type": "fs"
+      },
+      "training_data_references": [
+        {
+          "connection": {},
+          "id": "german_credit_data.csv",
+          "location": {
+            "href": "/userfs/v2/assets/data_asset.germancreditdatacsv-917u?project_id=9fe678d1-28d0-4349-b5a4-0092898c7768",
+            "id": "data_asset.germancreditdatacsv-917u",
+            "project_id": "9fe678d1-28d0-4349-b5a4-0092898c7768",
+            "userfs": "true"
+          },
+          "schema": {
+            "fields": [
+              {
+                "name": "CustomerID",
+                "type": "other"
+              },
+              {
+                "name": "CheckingStatus",
+                "type": "other"
+              },
+              {
+                "name": "LoanDuration",
+                "type": "double"
+              },
+              {
+                "name": "CreditHistory",
+                "type": "other"
+              },
+              {
+                "name": "LoanPurpose",
+                "type": "other"
+              },
+              {
+                "name": "LoanAmount",
+                "type": "double"
+              },
+              {
+                "name": "ExistingSavings",
+                "type": "other"
+              },
+              {
+                "name": "EmploymentDuration",
+                "type": "other"
+              },
+              {
+                "name": "InstallmentPercent",
+                "type": "double"
+              },
+              {
+                "name": "Sex",
+                "type": "other"
+              },
+              {
+                "name": "OthersOnLoan",
+                "type": "other"
+              },
+              {
+                "name": "CurrentResidenceDuration",
+                "type": "double"
+              },
+              {
+                "name": "OwnsProperty",
+                "type": "other"
+              },
+              {
+                "name": "Age",
+                "type": "double"
+              },
+              {
+                "name": "InstallmentPlans",
+                "type": "other"
+              },
+              {
+                "name": "Housing",
+                "type": "other"
+              },
+              {
+                "name": "ExistingCreditsCount",
+                "type": "double"
+              },
+              {
+                "name": "Job",
+                "type": "other"
+              },
+              {
+                "name": "Dependents",
+                "type": "double"
+              },
+              {
+                "name": "Telephone",
+                "type": "other"
+              },
+              {
+                "name": "ForeignWorker",
+                "type": "other"
+              },
+              {
+                "name": "Risk",
+                "type": "other"
+              }
+            ],
+            "id": "auto_ai_kb_input_schema"
+          },
+          "type": "data_asset"
+        }
+      ],
+      "software_spec": {
+        "base_id": "8c1a58c6-62b5-4dc4-987a-df751c2756b6",
+        "name": "hybrid_0.1"
+      },
+      "content_import_state": "completed",
+      "test_data_references": []
+    }
+  },
+  "metadata": {
+    "name": "CUR_v2_model - P5 Snap Random Forest Classifier",
+    "tags": [],
+    "asset_type": "wml_model",
+    "asset_category": "USER",
+    "resource_key": "7dc77840-d896-4223-8692-d8630d81b199",
+    "origin_country": "US",
+    "created_at": "2023-08-15T18:03:07Z",
+    "created": 1692122587626,
+    "asset_id": "wml_model.CURv2modelP5SnapRandomForestClassifier",
+    "asset_attributes": [
+      "wml_model"
+    ]
+  },
+  "attachments": [
+    {
+      "asset_type": "wml_model",
+      "name": "P5_automl.zip",
+      "user_data": {
+        "content_format": "pipeline-node",
+        "pipeline_node_id": "automl"
+      },
+      "created_at": "2023-08-15T18:03:09Z",
+      "id": "826f1d94-b2e8-4ec9-b299-9e59d01b9961",
+      "is_managed": true,
+      "is_referenced": false,
+      "is_remote": false,
+      "transfer_complete": true
+    },
+    {
+      "asset_type": "wml_model",
+      "name": "pipeline_model.json",
+      "user_data": {
+        "content_format": "native"
+      },
+      "created_at": "2023-08-15T18:03:12Z",
+      "id": "ad67c227-9603-491d-b3a0-72f59db49440",
+      "is_managed": true,
+      "is_referenced": false,
+      "is_remote": false,
+      "transfer_complete": true
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "entity": {
+    "wml_pipeline": {
+      "document": {
+        "doc_type": "pipeline",
+        "pipelines": [
+          {
+            "id": "autoai",
+            "nodes": [
+              {
+                "id": "automl",
+                "op": "kube",
+                "parameters": {
+                  "output_logs": true,
+                  "incremental_learning": false,
+                  "input_file_separator": ",",
+                  "stage_flag": true,
+                  "optimization": {
+                    "compute_pipeline_notebooks_flag": true,
+                    "cv_num_folds": 3,
+                    "daub_adaptive_subsampling_max_mem_usage": 6000000000,
+                    "daub_include_only_estimators": [
+                      "DecisionTreeClassifierEstimator",
+                      "ExtraTreesClassifierEstimator",
+                      "LGBMClassifierEstimator"
+                    ],
+                    "global_stage_include_batched_ensemble_estimators": [
+                      "BatchedTreeEnsembleClassifier(ExtraTreesClassifier)",
+                      "BatchedTreeEnsembleClassifier(LGBMClassifier)"
+                    ],
+                    "holdout_param": 0.1,
+                    "label": "Risk",
+                    "learning_type": "classification",
+                    "max_num_daub_ensembles": 2,
+                    "positive_label": "No Risk",
+                    "run_cognito_flag": true,
+                    "scorer_for_ranking": "accuracy"
+                  },
+                  "n_parallel_data_connections": 4,
+                  "one_vs_all_file": true
+                },
+                "runtime_ref": "autoai",
+                "type": "execution_node"
+              }
+            ],
+            "runtime_ref": "hybrid"
+          }
+        ],
+        "primary_pipeline": "autoai",
+        "runtimes": [
+          {
+            "app_data": {
+              "wml_data": {
+                "hardware_spec": {
+                  "base_id": "e7ed1d6c-2e89-42d7-aed5-863b972c1d2b",
+                  "name": "S"
+                }
+              }
+            },
+            "id": "autoai",
+            "name": "auto_ai.kb"
+          }
+        ],
+        "version": "2.0"
+      },
+      "ml_version": "4.0.4"
+    }
+  },
+  "metadata": {
+    "name": "CUR_v2",
+    "tags": [
+      "dsx-project.9fe678d1-28d0-4349-b5a4-0092898c7768"
+    ],
+    "asset_type": "wml_pipeline",
+    "asset_category": "USER",
+    "origin_country": "US",
+    "created_at": "2023-08-14T17:20:15Z",
+    "created": 1692033615183,
+    "asset_id": "wml_pipeline.CURv2-L5hR",
+    "asset_attributes": [
+      "wml_pipeline"
+    ]
+  },
+  "attachments": []
+}

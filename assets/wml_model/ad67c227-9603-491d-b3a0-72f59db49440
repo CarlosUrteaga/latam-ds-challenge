@@ -1,0 +1,60 @@
+{
+  "doc_type": "pipeline",
+  "pipelines": [{
+    "id": "504dc1b9-3486-400a-a327-5ca3e08c12c5",
+    "nodes": [{
+      "id": "automl",
+      "op": "wml-http-score",
+      "outputs": [{
+        "id": "automl"
+      }],
+      "parameters": {
+        "output_logs": true,
+        "incremental_learning": false,
+        "input_file_separator": ",",
+        "stage_flag": true,
+        "optimization": {
+          "compute_pipeline_notebooks_flag": true,
+          "cv_num_folds": 3,
+          "daub_adaptive_subsampling_max_mem_usage": 6000000000,
+          "global_stage_include_batched_ensemble_estimators": ["BatchedTreeEnsembleClassifier(ExtraTreesClassifier)", "BatchedTreeEnsembleClassifier(LGBMClassifier)", "BatchedTreeEnsembleClassifier(RandomForestClassifier)", "BatchedTreeEnsembleClassifier(SnapBoostingMachineClassifier)", "BatchedTreeEnsembleClassifier(SnapRandomForestClassifier)", "BatchedTreeEnsembleClassifier(XGBClassifier)"],
+          "holdout_param": 0.1,
+          "label": "Risk",
+          "learning_type": "classification",
+          "max_num_daub_ensembles": 2,
+          "positive_label": "No Risk",
+          "run_cognito_flag": true,
+          "scorer_for_ranking": "accuracy",
+          "train_sample_columns_index_list": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+        },
+        "n_parallel_data_connections": 4.0,
+        "one_vs_all_file": true,
+        "output_model": {
+          "location": "/projects/9fe678d1-28d0-4349-b5a4-0092898c7768/assets/auto_ml/auto_ml.CURv2model/wml_data/820ee77f-88f5-42d5-9883-ff74d415baf0/data/automl/batch_ensemble_output/Pipeline1/model.pickle",
+          "name": "automl"
+        }
+      },
+      "runtime_ref": "autoai",
+      "type": "execution_node"
+    }],
+    "runtime_ref": "hybrid"
+  }],
+  "primary_pipeline": "504dc1b9-3486-400a-a327-5ca3e08c12c5",
+  "runtimes": [{
+    "app_data": {
+      "wml_data": {
+        "hardware_spec": {
+          "id": "e7ed1d6c-2e89-42d7-aed5-863b972c1d2b",
+          "name": "S"
+        },
+        "software_spec": {
+          "name": "autoai-kb_rt23.1-py3.10"
+        }
+      }
+    },
+    "id": "autoai",
+    "name": "auto_ai.kb",
+    "version": "sha256:e4042f1649a04eda0f7db203e8e2508438685ec76f5b9a8ff4ad09a923cce4e0"
+  }],
+  "version": "2.0"
+}
